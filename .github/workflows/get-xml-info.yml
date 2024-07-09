@@ -1,0 +1,52 @@
+name: Get XML Info
+# import solution to another enviroment
+
+on:
+  workflow_dispatch:dfs
+    inputs:
+      # Change this value
+      branche:
+        description: 'Name of the branch you will import in ENV'
+        required: true
+        default: 'main'
+      solution_name:
+        description: 'name of the solution to worked on from Power Platform'
+        required: true
+        default: 'LCP'
+       #Do Not change these values
+      solution_exported_folder:
+        description: 'folder name for staging the exported solution *do not change*'
+        required: true
+        default: /out
+      solution_folder:
+        description: 'staging the unpacked solution folder before check-in *do not change*'
+        required: true
+        default: /solution
+      solution_target_folder: 
+       description: 'folder name to be created and checked in *do not change*'
+       required: true
+       default: solution
+env:
+#edit your values here
+  ENVIRONMENT_URL: 'https://org7013c1d0.crm4.dynamics.com/'
+  CLIENT_ID: '27a22a77-62a2-483d-bfef-f3075b56a587'
+  TENANT_ID: '23e3e3e1-fbfa-4df4-bc07-16b806733ae7'
+permissions:
+  contents: write
+jobs:
+  export-from-dev:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        lfs: true
+        ref: ${{ github.event.inputs.branche }}
+
+    - name: Get XML Info
+      uses: mavrosxristoforos/get-xml-info@2.0
+      with:
+      # The xml file from which to retrieve information.
+        xml-file: ${{ github.event.inputs.solution_folder}}\CanvasApps\wgj_lcplistcopypasteapp_5f169.meta.xml
+      # The XPath of a node, to fetch its contents as output.
+        xpath: //DocumentUri    
