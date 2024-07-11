@@ -22,9 +22,9 @@ on:
        default: solution
 
 env:
-  ENVIRONMENT_URL: 'https://org76bbc37c.crm4.dynamics.com'
-  CLIENT_ID: '27a22a77-62a2-483d-bfef-f3075b56a587'
-  TENANT_ID: '23e3e3e1-fbfa-4df4-bc07-16b806733ae7'
+  ENVIRONMENT_URL: 'https://orgb686f1f4.crm4.dynamics.com'
+  CLIENT_ID: 'c99afbb3-a451-43b2-802e-92c469066b06'
+  TENANT_ID: '18e22a74-bee3-462b-aee3-172df46291f3'
 permissions:
   contents: write  
 
