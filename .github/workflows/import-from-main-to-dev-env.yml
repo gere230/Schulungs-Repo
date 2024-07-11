@@ -1,5 +1,5 @@
-name: import in new Eviroment
-# import solution to another enviroment
+name: import in new EviroNment
+# import solution to another enviroNment
 
 on:
   workflow_dispatch:
