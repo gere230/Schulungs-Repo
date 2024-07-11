@@ -70,10 +70,3 @@ jobs:
         client-secret: ${{ secrets.CLIENTSECRET_CDDEV }}
         tenant-id: ${{env.TENANT_ID}}
 
-    - name: Get XML Info
-      uses: mavrosxristoforos/get-xml-info@2.0
-      with:
-        # The xml file from which to retrieve information.
-        xml-file: ${{ github.event.inputs.solution_folder}}\CanvasApps\wgj_lcplistcopypasteapp_5f169.meta.xml
-        # The XPath of a node, to fetch its contents as output.
-        xpath: //DocumentUri    
