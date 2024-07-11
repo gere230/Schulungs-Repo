@@ -1,4 +1,4 @@
-name: Export from Eviroment
+name: Export from Enviroment
 on: 
   workflow_dispatch:
     inputs:
