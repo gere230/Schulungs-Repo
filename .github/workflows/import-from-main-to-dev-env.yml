@@ -58,7 +58,7 @@ jobs:
       with:
         environment-url: ${{env.ENVIRONMENT_URL}}
         app-id: ${{env.CLIENT_ID}}
-        client-secret: ${{ secrets.CLIENTSECRET }}
+        client-secret: ${{ secrets.CLIENTSECRET_CDDEV }}
         tenant-id: ${{env.TENANT_ID}}
         solution-file: ${{ github.workspace }}\${{ github.event.inputs.solution_name }}.zip
 
